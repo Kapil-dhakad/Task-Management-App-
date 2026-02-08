@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors'
 import dotenv from 'dotenv'
+import authRoutes from './routes/auth.route'
 
 dotenv.config()
 
@@ -14,5 +15,7 @@ app.use(cors({
 }))
 
 // Middleware to handle JSON object in req body
+
+app.use('/api/auth', authRoutes)
 
 export default app;
